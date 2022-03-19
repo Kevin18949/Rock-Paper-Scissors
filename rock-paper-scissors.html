@@ -15,36 +15,52 @@
 
     let items = ["Rock", "Paper", "Scissors"];
     
-    //Get Computer input
-    let computerSelection = random_item(items);
-    console.log(computerSelection)
+    //Define players
+    let player = 0;
+    let computer = 0;
+    
+    for (let i = 0; i < 5; i++) {
+      
+      //Get computer input
+      let computerSelection = random_item(items);
+      console.log(computerSelection)
 
-    //Get user input
-    let input = prompt("Rock, Paper, or Scissors?");
-    let playerSelection = input.toLowerCase();
-
-    //Return a string that declares the winner of the round
-    if (playerSelection === "rock" && computerSelection === "Scissors") {
-      alert("You Win!");
-    } else if (playerSelection === "rock" && computerSelection === "Rock") {
-      alert("Try again");
-    } else if (playerSelection === "rock" && computerSelection === "Paper"){
-       alert("You Lose!");
-    } else if (playerSelection === "paper" && computerSelection === "Rock") {
-      alert("You Win!");
-    } else if (playerSelection === "paper" && computerSelection === "Paper") {
-      alert("Try again");
-    } else if (playerSelection === "paper" && computerSelection === "Scissors") {
-      alert("You Lose!");
-    } else if (playerSelection === "scissors" && computerSelection === "Paper") {
-      alert("You Win!");
-    } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
-      alert("Try again");
-    } else if (playerSelection === "scissors" && computerSelection === "Rock") {
-      alert("You Lose!");
-    } else {
-      alert("Not a valid input");
+      //Get user input
+      let input = prompt("Rock, Paper, or Scissors?");
+      let playerSelection = input.toLowerCase();
+      
+      //Return a string that declares the winner of the round
+      if (playerSelection === "rock" && computerSelection === "Scissors") {
+        player += 1;
+        alert("You Win!\n" + "Player: " + player + "\n" + "Computer: " + computer);        
+      } else if (playerSelection === "rock" && computerSelection === "Rock") {
+        alert("Draw!\n" + "Player: " + player + "\n" + "Computer: " + computer);
+      } else if (playerSelection === "rock" && computerSelection === "Paper"){
+        computer += 1;
+        alert("You Lose!\n" + "Player: " + player + "\n" + "Computer: " + computer);
+      } else if (playerSelection === "paper" && computerSelection === "Rock") {
+        player += 1;
+        alert("You Win!");
+      } else if (playerSelection === "paper" && computerSelection === "Paper") {
+        alert("Draw!\n" + "Player: " + player + "\n" + "Computer: " + computer);
+      } else if (playerSelection === "paper" && computerSelection === "Scissors") {
+        computer += 1;
+        alert("You Lose!");
+      } else if (playerSelection === "scissors" && computerSelection === "Paper") {
+        player += 1;
+        alert("You Win!");
+      } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
+        alert("Draw!\n" + "Player: " + player + "\n" + "Computer: " + computer);
+      } else if (playerSelection === "scissors" && computerSelection === "Rock") {
+        computer += 1;
+        alert("You Lose!");
+      } else {
+        alert("Not a valid input");
+        i -= 1;
+      }
     }
+
+    alert("Final Score\n" + "Player: " + player + "\n" + "Computer: " + computer);
 
   </script>
 
