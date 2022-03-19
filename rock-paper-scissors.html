@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paper, Scissors</title>
+
+  <script>
+    
+    //Create a function which randomly selects Rock, Paper, or Scissors
+    function random_item(items) {
+      return items[Math.floor(Math.random()*items.length)];
+    }
+
+    let items = ["Rock", "Paper", "Scissors"];
+    
+    //Get Computer input
+    let computerSelection = random_item(items);
+    console.log(computerSelection)
+
+    //Get user input
+    let input = prompt("Rock, Paper, or Scissors?");
+    let playerSelection = input.toLowerCase();
+
+    //Return a string that declares the winner of the round
+    if (playerSelection === "rock" && computerSelection === "Scissors") {
+      alert("You Win!");
+    } else if (playerSelection === "rock" && computerSelection === "Rock") {
+      alert("Try again");
+    } else if (playerSelection === "rock" && computerSelection === "Paper"){
+       alert("You Lose!");
+    } else if (playerSelection === "paper" && computerSelection === "Rock") {
+      alert("You Win!");
+    } else if (playerSelection === "paper" && computerSelection === "Paper") {
+      alert("Try again");
+    } else if (playerSelection === "paper" && computerSelection === "Scissors") {
+      alert("You Lose!");
+    } else if (playerSelection === "scissors" && computerSelection === "Paper") {
+      alert("You Win!");
+    } else if (playerSelection === "scissors" && computerSelection === "Scissors") {
+      alert("Try again");
+    } else if (playerSelection === "scissors" && computerSelection === "Rock") {
+      alert("You Lose!");
+    } else {
+      alert("Not a valid input");
+    }
+
+  </script>
+
+</head>
+<body>
+  
+</body>
+</html>
